@@ -1,5 +1,5 @@
-[![DeepSource](https://app.deepsource.com/gh/ItsKandar/botus.svg/?label=active+issues&show_trend=true&token=MRqVBh5J5gaqplv9nFCED3aP)](https://app.deepsource.com/gh/ItsKandar/motus/?ref=repository-badge)
-[![DeepSource](https://app.deepsource.com/gh/ItsKandar/botus.svg/?label=resolved+issues&show_trend=true&token=MRqVBh5J5gaqplv9nFCED3aP)](https://app.deepsource.com/gh/ItsKandar/motus/?ref=repository-badge)
+[![DeepSource](https://app.deepsource.com/gh/ItsKandar/pebotix.svg/?label=active+issues&show_trend=true&token=ssQK635FCFpoS2QNjATzmg1e)](https://app.deepsource.com/gh/ItsKandar/pebotix/)
+[![DeepSource](https://app.deepsource.com/gh/ItsKandar/pebotix.svg/?label=resolved+issues&show_trend=true&token=ssQK635FCFpoS2QNjATzmg1e)](https://app.deepsource.com/gh/ItsKandar/pebotix/)
 
 # Pebotix
 

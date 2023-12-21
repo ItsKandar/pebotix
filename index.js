@@ -4,7 +4,6 @@ const path = require('node:path');
 const fs = require('node:fs');
 const { RE_TOKEN } = require('dotenv');
 const { Client,GatewayIntentBits } = require('discord.js'); //imports discord.js
-const eventHandler = require("")
 
 const client = new Client({
     intents:[
@@ -20,8 +19,6 @@ module.exports = client; //exports the client
 client.commands = new Collection();
 const commandsPath = path.join(__dirname, 'commands');
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
-const eventsPath = path.join(__dirname, 'events');
-const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
     const filePath = path.join(commandsPath, file);

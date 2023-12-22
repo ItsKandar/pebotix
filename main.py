@@ -12,6 +12,8 @@ from config import *
 
 ###### FIN FONCTIONS #######
 
+
+    
 ###### BOT ######
 intents = discord.Intents.default()
 intents.message_content = True
@@ -27,6 +29,22 @@ bot = commands.Bot(command_prefix="$", intents=intents, help_command=None)
 async def get_bot():
     return bot
 
+###### COMMANDES ######
+    
+@bot.tree.command(name='ping', description='Affiche la latence du bot')
+async def ping(ctx):
+    latency = round(bot.latency * 1000)
+    await ctx.response.send_message(f"Pong! Latence: {latency}ms")
+
+@bot.tree.command(name='ping2', description='Affiche la latence du bot')
+async def ping(ctx):
+    latency = round(bot.latency * 1000)
+    await ctx.response.send_message(f"Pong! Latence: {latency}ms")
+
+@bot.tree.command(name='card', description='Choisi entre yugioh et magic')
+async def card(ctx):
+    await ctx.response.send_message(f"J'ai choisi {random.choice(['yugioh', 'magic'])}")
+
 # Confirme la connexion
 @bot.event
 async def on_ready():
@@ -40,20 +58,8 @@ async def on_ready():
     await bot.change_presence(activity=discord.Game(name='Coucou!'))
 
 ###### FIN BOT ######
-
-###### COMMANDES ######
     
-@bot.tree.command(name='ping', description='Affiche la latence du bot')
-async def ping(ctx):
-    latency = round(bot.latency * 1000)
-    await ctx.response.send_message(f"Pong! Latence: {latency}ms")
-
-@bot.tree.command(name='card', description='Choisi entre yugioh et magic')
-async def card(ctx):
-    await ctx.response.send_message(f"J'ai choisi {random.choice(['yugioh', 'magic'])}")
-
 ###### COMMANDES TEXTE ######
-    
 @bot.event
 async def on_message(message):
 

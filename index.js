@@ -3,7 +3,7 @@ require('dotenv/config'); //initializes dotenv
 const path = require('node:path');
 const fs = require('node:fs');
 const { RE_TOKEN } = require('dotenv');
-const { Client,GatewayIntentBits } = require('discord.js'); //imports discord.js
+const { Client, Collection, Events, GatewayIntentBits, ActivityType, EmbedBuilder } = require('discord.js');
 
 const client = new Client({
     intents:[

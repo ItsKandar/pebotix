@@ -48,6 +48,36 @@ async def ping(ctx):
     latency = round(bot.latency * 1000)
     await ctx.response.send_message(f"Pong! Latence: {latency}ms")
 
+@bot.tree.command(name='card', description='Choisi entre yugioh et magic')
+async def card(ctx):
+    await ctx.response.send_message(f"J'ai choisi {random.choice(['yugioh', 'magic'])}")
+
+###### COMMANDES TEXTE ######
+    
+@bot.event
+async def on_message(message):
+
+    #ignore lui meme
+    if message.author == bot.user:
+        return
+
+    if bot.user in message.mentions:
+        ping()
+
+    await bot.process_commands(message)
+    if message.author.id in DEV_ID: #admin commands :)
+
+        if message.content == '$adstop':
+            await message.channel.send('Arret en cours...')
+            await bot.close()
+
+        if message.content[:6] == '$adsay':
+            await message.channel.send(message.content[7:])
+            await message.delete()
+
+        if message.content[:9] == '$adstatus':
+            await bot.change_presence(activity=discord.Game(name=message.content[10:]))
+            await message.channel.send('Status changé!')
 ###### FIN COMMANDES ######
 
 ###### A LA FIN, LANCE LE BOT ######    

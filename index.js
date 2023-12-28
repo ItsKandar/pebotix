@@ -1,8 +1,8 @@
-require('dotenv/config'); //initializes dotenv
+//require('dotenv/config'); //initializes dotenv
 
 const path = require('node:path');
 const fs = require('node:fs');
-const { RE_TOKEN } = require('dotenv');
+const { token } = require('./config.json');
 const { Client, Collection, Events, GatewayIntentBits, ActivityType, EmbedBuilder } = require('discord.js');
 
 const client = new Client({
@@ -43,4 +43,4 @@ client.on(Events.InteractionCreate, async interaction => {
 
 //this line must be at the very end
 //Well no, it doesn't have to be at the very end, but it's best practice to put it at the end
-client.login(RE_TOKEN); //Logs the bot with the token
+client.login(token); //Logs the bot with the token
